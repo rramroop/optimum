@@ -1,0 +1,4 @@
+name = Optimum View Modes
+description = View modes for node types
+core = 7.x
+package = Optimum
