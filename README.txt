@@ -1,4 +1,6 @@
-Testing push
+Last issue I ran into was the scrollspy offset not functioning properly.
+-Rajiv 8/12/13
+
 CONTENTS OF THIS FILE
 ---------------------
 

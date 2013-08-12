@@ -2,3 +2,42 @@
  * This file should get overwritten if Method 1 is used. If Method 2 is chosen,
  * remove this comment and start adding your styles to this file.
  */
+
+ 
+#sticky-nav { 
+	position: fixed;
+  left: 13px;
+  top: 50%;
+  width: 48px;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  border-radius: 24px;
+  background-color: rgba(204, 150, 204, 0.7);
+  margin-top: -124px;
+  padding: 8px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; 
+  margin-left:0;
+  padding:0;
+}
+#sticky-nav div { padding:0; margin:0; }
+#sticky-nav li { list-style-type:none; padding: 15px 7px; }
+#sticky-nav li a i  { color:#dab6db; font-size:24px;  }
+#sticky-nav li a  { background: #FFF;width: 30px;height: 30px; display: block; border-radius: 30px;}
+#sticky-nav li a:hover i  { color:#fff; font-size:24px;  }
+#sticky-nav li.active  a { background:#9a489c;}
+#sticky-nav li.active a i  { color:#fff;   }
+
+
+h1.lead-section {
+      font-family: "Bookman Old Style","bookman",Serif;
+      font-weight: 300;
+      font-size: 56px;
+      margin: 0; }

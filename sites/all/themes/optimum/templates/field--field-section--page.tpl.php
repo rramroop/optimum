@@ -42,30 +42,22 @@
  * @see theme_field()
  *
  * @ingroup themeable
- * field--field-tab-slider--field-tabs.tpl.php
- * field--field-body--field-tab-slider.tpl.php //old
-*/
-$id = $element['#object']->field_tab_id['und'][0]['value'];
-$count = count($element['#object']->field_tab_slider['und']);
+ */
+ $chapterID = array();
+ $fcid = $element['#object']->field_section['und'];
+ foreach ($fcid as $delta=> $value) {
+	$value = $value['value'];
+	$fc_item = field_collection_item_load($value, $reset = FALSE);
+	$chapterID[$delta] = $fc_item->field_chapter_id['und'][0]['value'];
+	
+} 
+// dpm($chapterID);
 ?>
 
-<div id="<?php echo $id; ?>" class="carousel slide">
-
-  <div class="carousel-inner"<?php print $content_attributes; ?>>
+<div re="thisisthesection" class="<?php print $classes; ?>"<?php print $attributes; ?>>
+ <div class="field-items"<?php print $content_attributes; ?>>
     <?php foreach ($items as $delta => $item): ?>
-      <div class="item <?php if($delta==0) echo "active ";  print $delta % 2 ? 'odd' : 'even';?>"<?php print $item_attributes[$delta]; ?>>
-		
-		<?php print render($item); ?>
-	  </div>
+      <div id="<?php echo $chapterID[$delta]; ?>" class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
     <?php endforeach; ?>
   </div>
-<?php if($count >1) { ?>  
-  <a class="left carousel-control" href="#<?php echo $id; ?>" data-slide="prev">
-    <span class="icon-prev"></span>
-  </a>
-  <a class="right carousel-control" href="#<?php echo $id; ?>" data-slide="next">
-    <span class="icon-next"></span>
-  </a>
-<?php } ?>
-
 </div>

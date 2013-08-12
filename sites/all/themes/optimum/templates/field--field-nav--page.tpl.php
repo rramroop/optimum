@@ -42,30 +42,14 @@
  * @see theme_field()
  *
  * @ingroup themeable
- * field--field-tab-slider--field-tabs.tpl.php
- * field--field-body--field-tab-slider.tpl.php //old
-*/
-$id = $element['#object']->field_tab_id['und'][0]['value'];
-$count = count($element['#object']->field_tab_slider['und']);
+ */
 ?>
-
-<div id="<?php echo $id; ?>" class="carousel slide">
-
-  <div class="carousel-inner"<?php print $content_attributes; ?>>
+<div id="sticky-nav-wrap">
+<ul id="sticky-nav" class="nav nav-list affix">
+  
     <?php foreach ($items as $delta => $item): ?>
-      <div class="item <?php if($delta==0) echo "active ";  print $delta % 2 ? 'odd' : 'even';?>"<?php print $item_attributes[$delta]; ?>>
-		
-		<?php print render($item); ?>
-	  </div>
+      <li class="<?php if($delta==0) echo "active"?>"><?php print render($item); ?></li>
     <?php endforeach; ?>
-  </div>
-<?php if($count >1) { ?>  
-  <a class="left carousel-control" href="#<?php echo $id; ?>" data-slide="prev">
-    <span class="icon-prev"></span>
-  </a>
-  <a class="right carousel-control" href="#<?php echo $id; ?>" data-slide="next">
-    <span class="icon-next"></span>
-  </a>
-<?php } ?>
-
+  
+</ul>
 </div>

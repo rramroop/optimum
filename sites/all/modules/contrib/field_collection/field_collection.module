@@ -1211,10 +1211,10 @@ function field_collection_field_formatter_view($entity_type, $entity, $field, $i
       foreach ($items as $delta => $item) {
         if ($field_collection = field_collection_field_get_entity($item)) {
           $element[$delta]['entity'] = $field_collection->view($view_mode);
-          $element[$delta]['#theme_wrappers'] = array('field_collection_view');
+          /* $element[$delta]['#theme_wrappers'] = array('field_collection_view');
           $element[$delta]['#attributes']['class'][] = 'field-collection-view';
           $element[$delta]['#attributes']['class'][] = 'clearfix';
-          $element[$delta]['#attributes']['class'][] = drupal_clean_css_identifier('view-mode-' . $view_mode);
+          $element[$delta]['#attributes']['class'][] = drupal_clean_css_identifier('view-mode-' . $view_mode); */
 
           $links = array(
             '#theme' => 'links__field_collection_view',
